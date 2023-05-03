@@ -5,10 +5,16 @@
     <!--CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies-->
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <GenerateDependencyFile>true</GenerateDependencyFile>
     <PublishDir>..\bin\JsonAdapter</PublishDir>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <RuntimeIdentifiers>any</RuntimeIdentifiers>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <!-- Disable PDB generation for the Release build -->
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Portable</DebugType>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -18,7 +24,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Management.Automation" Version="7.4.0-preview.2">
+    <PackageReference Include="System.Management.Automation" Version="7.4.0-preview.3">
       <ExcludeAssets>contentFiles</ExcludeAssets>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
