@@ -6,7 +6,6 @@ param (
 
 $config = $Release.ToBool() ? "Release" : "Debug"
 if ( ! $Publish ) {
-    wait-debugger
     try {
         Push-Location "$PSScriptRoot/src"
         dotnet build --configuration $config
